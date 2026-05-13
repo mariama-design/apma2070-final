@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c ' *)",
+      "Bash(ln -sf \"../Re_100/velocity.mat\" data/velocity.mat)",
+      "Bash(ln -sf \"../Re_100/pressure.mat\" data/pressure.mat)",
+      "Bash(ln -sf \"../Course project_ Learning dynamical systems from data/Cavity_data/cavity_data.mat\" data/cavity_data.mat)",
+      "Bash(python3 check_data.py)",
+      "Bash(python3 animate_flow.py)",
+      "Bash(python3 task1_forward/train.py --tag _smoke --adam-iters 1000 --lbfgs-iters 0)",
+      "Bash(cd \"/Users/mayan/Downloads/apma 2070 final\" && rm -f task1_forward/results/_smoke*)",
+      "Bash(xargs -I{} ps -p {} -o pid,pcpu,pmem,etime,command)",
+      "Bash(kill 78738)",
+      "Bash(xargs -r kill)",
+      "Bash(ps -p 79312 -o pid,pcpu,pmem,etime,command)"
+    ]
+  }
+}
