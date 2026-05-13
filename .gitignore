@@ -1,0 +1,6 @@
+.venv/
+oscar/logs/
+*.h5
+*.npz
+__pycache__/
+

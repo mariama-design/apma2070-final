@@ -12,10 +12,15 @@
 # Adjust to whatever your Oscar setup uses. Two common options:
 #
 # (a) Use the CCV-maintained TF module (simplest, no conda):
-#       module load python/3.11 cuda/12.4 cudnn/9.0
-#       python -m venv ~/envs/pinn
-#       source ~/envs/pinn/bin/activate
-#       pip install tensorflow scipy matplotlib
+       module purge
+       module load python/3.11 cuda/12.4 cudnn/9.0
+       source .venv/bin/activate
+       export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
+       export TF_CPP_MIN_LOG_LEVEL=1
+
+       python -c "import tensorflow as tf; print('TF', tf.__version__); print('GPUs:', tf.config.list_physical_devices('GPU'))"
+
+       nvidia-smi
 #
 # (b) Or load a personal conda env:
 #       module load anaconda/2023.09-0
